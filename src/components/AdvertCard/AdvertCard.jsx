@@ -1,8 +1,13 @@
-import placeholder from 'img/placeholder.jpg';
+// Libs
 import { useState } from 'react';
+// Components
+import { Modal } from 'components/Modal/Modal';
+import { AdvertModal } from 'components/AdvertModal/AdvertModal';
+// Static data
+import placeholder from 'img/placeholder.jpg';
 
-export const AdvertCard = ({
-    data: {
+export const AdvertCard = ({ data, toggleFavorites }) => {
+    const {
         id,
         img,
         make,
@@ -12,18 +17,19 @@ export const AdvertCard = ({
         address,
         rentalCompany,
         type,
-        mileage,
         functionalities,
-        favorite = false,
-    },
-    toggleFavorites,
-}) => {
+        favorite,
+    } = data;
+
     const [isFavorite, setIsFavorite] = useState(favorite);
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     const handleFavorite = () => {
         toggleFavorites(id);
         setIsFavorite(prevState => !prevState);
     };
+
+    const toggleModal = () => setIsModalOpen(prevState => !prevState);
 
     return (
         <>
@@ -54,9 +60,19 @@ export const AdvertCard = ({
                 <li>Premium</li>
                 <li>{type}</li>
                 <li>{model}</li>
-                <li>{mileage}</li>
+                <li>{id}</li>
                 <li>{functionalities[0]}</li>
             </ul>
+
+            <button type="button" onClick={toggleModal}>
+                Learn more
+            </button>
+
+            {isModalOpen && (
+                <Modal toggleModal={toggleModal}>
+                    <AdvertModal data={data} />
+                </Modal>
+            )}
         </>
     );
 };

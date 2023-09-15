@@ -1,7 +1,7 @@
 // Libs
 import { useEffect, useState } from 'react';
 // Api
-import { getAdverts, updateAdvert } from 'api/advertsApi';
+import { getAdverts } from 'api/advertsApi';
 // Components
 import { AdvertList } from 'components/AdvertList/AdvertList';
 // Hooks

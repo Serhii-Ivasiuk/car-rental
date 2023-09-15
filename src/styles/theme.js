@@ -13,6 +13,7 @@ export const theme = Object.freeze({
         bgSecondary: '#F7F7FB',
         bgAccent: '#3470FF',
         bgScroll: 'rgba(18, 20, 23, 0.05)',
+        bgBackdrop: 'rgba(18, 20, 23, 0.50)',
         // Border
         borderPrimary: 'rgba(18, 20, 23, 0.05)',
         borderSecondary: 'rgba(18, 20, 23, 0.10)',
