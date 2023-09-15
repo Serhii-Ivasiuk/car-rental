@@ -1,7 +1,9 @@
 import placeholder from 'img/placeholder.jpg';
+import { useState } from 'react';
 
 export const AdvertCard = ({
     data: {
+        id,
         img,
         make,
         model,
@@ -10,10 +12,19 @@ export const AdvertCard = ({
         address,
         rentalCompany,
         type,
-        id,
+        mileage,
         functionalities,
+        favorite = false,
     },
+    toggleFavorites,
 }) => {
+    const [isFavorite, setIsFavorite] = useState(favorite);
+
+    const handleFavorite = () => {
+        toggleFavorites(id);
+        setIsFavorite(prevState => !prevState);
+    };
+
     return (
         <>
             <img
@@ -22,6 +33,10 @@ export const AdvertCard = ({
                 width="274"
                 height="268"
             />
+
+            <button type="button" onClick={handleFavorite}>
+                {isFavorite ? 'Remove from favorite' : 'Add to favorite'}
+            </button>
 
             <div>
                 <h2>
@@ -39,7 +54,7 @@ export const AdvertCard = ({
                 <li>Premium</li>
                 <li>{type}</li>
                 <li>{model}</li>
-                <li>{id}</li>
+                <li>{mileage}</li>
                 <li>{functionalities[0]}</li>
             </ul>
         </>

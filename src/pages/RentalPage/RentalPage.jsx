@@ -1,13 +1,13 @@
 // Libs
 import { useEffect, useState } from 'react';
 // Api
-import * as API from 'api/advertsApi';
+import { getAdverts, updateAdvert } from 'api/advertsApi';
 // Components
 import { AdvertList } from 'components/AdvertList/AdvertList';
-
-const LIMIT = 10;
-const CANCELED_ERROR = 'CanceledError';
-const ERROR_MESSAGE = 'Something went wrong... Please try again later.';
+// Hooks
+import { useFavorites } from 'hooks/useFavorites';
+// Constants
+import { LIMIT, CANCELED_ERROR, ERROR_MESSAGE } from 'constants/constants';
 
 export const RentalPage = () => {
     const [adverts, setAdverts] = useState([]);
@@ -15,6 +15,7 @@ export const RentalPage = () => {
     const [error, setError] = useState('');
     const [page, setPage] = useState(1);
     const [isEndOfResults, setIsEndOfResults] = useState(false);
+    const [, toggleFavorites] = useFavorites();
 
     useEffect(() => {
         const abortController = new AbortController();
@@ -23,7 +24,7 @@ export const RentalPage = () => {
             try {
                 setIsLoading(true);
                 setError('');
-                const data = await API.getAdverts(
+                const data = await getAdverts(
                     page,
                     LIMIT,
                     abortController.signal
@@ -58,7 +59,10 @@ export const RentalPage = () => {
 
             {!isLoading && !error && adverts.length > 0 && (
                 <>
-                    <AdvertList data={adverts} />
+                    <AdvertList
+                        data={adverts}
+                        toggleFavorites={toggleFavorites}
+                    />
 
                     {!isEndOfResults ? (
                         <button type="button" onClick={handleLoadMore}>

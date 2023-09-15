@@ -14,3 +14,9 @@ export const getAdverts = async (page = 1, limit = 10, signal = null) => {
 
     return data;
 };
+
+export const updateAdvert = async (id, updates) => {
+    const { data } = await axios.put(`/adverts/${id}`, updates);
+
+    return data;
+};
