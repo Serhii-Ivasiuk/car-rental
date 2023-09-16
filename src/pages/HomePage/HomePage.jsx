@@ -1,3 +1,11 @@
+// Components
+import { Section } from 'components/Shared/Section/Section';
+import { PageTitle } from 'components/Shared/PageTitle/PageTitle';
+
 export const HomePage = () => {
-    return <div>HomePage</div>;
+    return (
+        <Section>
+            <PageTitle hidden>Car rental</PageTitle>
+        </Section>
+    );
 };

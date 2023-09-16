@@ -3,7 +3,11 @@ import { useEffect, useState } from 'react';
 // Api
 import { getAdverts } from 'api/advertsApi';
 // Components
-import { AdvertList } from 'components/AdvertList/AdvertList';
+import { Section } from 'components/Shared/Section/Section';
+import { PageTitle } from 'components/Shared/PageTitle/PageTitle';
+import { CardList } from 'components/Shared/CardList/CardList';
+import { ButtonSecondary } from 'components/Shared/ButtonSecondary/ButtonSecondary';
+import { NoResults } from 'components/Shared/NoResults/NoResults';
 // Hooks
 import { useFavorites } from 'hooks/useFavorites';
 // Constants
@@ -52,30 +56,32 @@ export const RentalPage = () => {
     };
 
     return (
-        <>
+        <Section>
             {isLoading && <div>Loading...</div>}
 
             {error && <div>{error}</div>}
 
             {!isLoading && !error && adverts.length > 0 && (
                 <>
-                    <AdvertList
+                    <PageTitle hidden>Catalog</PageTitle>
+
+                    <CardList
                         data={adverts}
                         toggleFavorites={toggleFavorites}
                     />
 
                     {!isEndOfResults ? (
-                        <button type="button" onClick={handleLoadMore}>
+                        <ButtonSecondary type="button" onClick={handleLoadMore}>
                             Load more
-                        </button>
+                        </ButtonSecondary>
                     ) : (
-                        <p>
+                        <NoResults>
                             Sorry, but that's all the cars we have for you at
                             the moment.
-                        </p>
+                        </NoResults>
                     )}
                 </>
             )}
-        </>
+        </Section>
     );
 };

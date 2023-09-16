@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { IoCloseOutline } from 'react-icons/io5';
 // Styled components
-import { Overlay } from './Modal.styled';
+import { Overlay, ModalWindow, CloseBtn } from './Modal.styled';
 
 export const Modal = ({ toggleModal, children }) => {
     useEffect(() => {
@@ -34,12 +34,12 @@ export const Modal = ({ toggleModal, children }) => {
 
     return createPortal(
         <Overlay onClick={handleBackdropClick}>
-            <div>
-                <span onClick={toggleModal}>
+            <ModalWindow>
+                <CloseBtn onClick={toggleModal}>
                     <IoCloseOutline size={24} />
-                </span>
+                </CloseBtn>
                 {children}
-            </div>
+            </ModalWindow>
         </Overlay>,
         backdropRootPortal
     );

@@ -12,12 +12,17 @@ export const theme = Object.freeze({
         bgPrimary: '#ffffff',
         bgSecondary: '#F7F7FB',
         bgAccent: '#3470FF',
+        bgAccentHover: '#0B44CD',
         bgScroll: 'rgba(18, 20, 23, 0.05)',
         bgBackdrop: 'rgba(18, 20, 23, 0.50)',
+        bgAdditional: '#F9F9F9',
         // Border
         borderPrimary: 'rgba(18, 20, 23, 0.05)',
         borderSecondary: 'rgba(18, 20, 23, 0.10)',
         borderAdditional: 'rgba(138, 138, 137, 0.20)',
+        // Icon
+        iconPrimary: 'rgba(255, 255, 255, 0.8)',
+        iconAccent: '#3470FF',
     },
 
     gradients: {
