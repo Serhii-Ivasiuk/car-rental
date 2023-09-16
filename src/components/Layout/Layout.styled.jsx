@@ -1,5 +1,7 @@
 // Libs
 import styled from '@emotion/styled';
+// Theme
+import { theme } from 'styles';
 
 export const Page = styled.div`
     display: flex;
@@ -8,7 +10,7 @@ export const Page = styled.div`
 `;
 
 export const Header = styled.header`
-    background-color: yellow;
+    border-bottom: 1px solid ${theme.colors.borderAdditional};
 `;
 
 export const Container = styled.div`
@@ -18,5 +20,8 @@ export const Container = styled.div`
 
 export const Footer = styled.footer`
     margin-top: auto;
-    background-color: yellow;
+    padding: 12px 0;
+    text-align: center;
+    border-top: 1px solid ${theme.colors.borderAdditional};
+    background-color: ${theme.colors.bgAdditional};
 `;

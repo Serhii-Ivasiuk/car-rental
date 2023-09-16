@@ -1,5 +1,8 @@
+// Libs
+import PropTypes from 'prop-types';
 // Static data
 import errorPlaceholder from 'img/errorPlaceholder.png';
+// Styled components
 import { ErrorCardStyled, ErrorImage, ErrorText } from './ErrorCard.styled';
 
 export const ErrorCard = ({ children }) => {
@@ -15,4 +18,8 @@ export const ErrorCard = ({ children }) => {
             </ErrorCardStyled>
         </>
     );
+};
+
+ErrorCard.propTypes = {
+    children: PropTypes.node.isRequired,
 };
