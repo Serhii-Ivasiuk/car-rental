@@ -2,10 +2,12 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
 // Layout
 import { Layout } from 'components/Layout/Layout';
+// Helpers
+import { lazyNamedModuleImport } from 'helpers/lazyModuleImport';
 // Pages
-import { HomePage } from 'pages/HomePage/HomePage';
-import { FavoritePage } from 'pages/FavoritePage/FavoritePage';
-import { RentalPage } from 'pages/RentalPage/RentalPage';
+const HomePage = lazyNamedModuleImport('HomePage');
+const FavoritePage = lazyNamedModuleImport('FavoritePage');
+const RentalPage = lazyNamedModuleImport('RentalPage');
 
 export const App = () => {
     return (

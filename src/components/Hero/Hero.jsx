@@ -9,7 +9,7 @@ import {
     HeroImageWrapper,
 } from './Hero.styled';
 // Static data
-import heroImage from 'img/hero.png';
+import heroImage from 'img/hero.webp';
 
 export const Hero = () => {
     return (

@@ -20,7 +20,7 @@ import {
 // Helpers
 import { splitStringIntoNumberAndText } from 'helpers/splitStringIntoNumberAndText';
 // Static data
-import placeholder from 'img/placeholder.jpg';
+import placeholder from 'img/placeholder.webp';
 
 export const AdvertModal = ({
     data: {

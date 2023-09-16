@@ -25,7 +25,7 @@ import {
 // Helpers
 import { getShortestStringFromArr } from 'helpers/getShortestStringFromArr';
 // Static data
-import placeholder from 'img/placeholder.jpg';
+import placeholder from 'img/placeholder.webp';
 // Theme
 import { theme } from 'styles';
 

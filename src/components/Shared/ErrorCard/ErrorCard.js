@@ -1,7 +1,7 @@
 // Libs
 import PropTypes from 'prop-types';
 // Static data
-import errorPlaceholder from 'img/errorPlaceholder.png';
+import errorPlaceholder from 'img/errorPlaceholder.webp';
 // Styled components
 import { ErrorCardStyled, ErrorImage, ErrorText } from './ErrorCard.styled';
 
