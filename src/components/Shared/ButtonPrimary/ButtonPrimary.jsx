@@ -1,3 +1,6 @@
+// Libs
+import PropTypes from 'prop-types';
+// Styled components
 import { ButtonPrimaryStyled } from './ButtonPrimary.styled';
 
 export const ButtonPrimary = ({
@@ -17,4 +20,11 @@ export const ButtonPrimary = ({
             {children}
         </ButtonPrimaryStyled>
     );
+};
+
+ButtonPrimary.propTypes = {
+    children: PropTypes.node.isRequired,
+    tag: PropTypes.string.isRequired,
+    btnWidth: PropTypes.string.isRequired,
+    btnPadding: PropTypes.string.isRequired,
 };

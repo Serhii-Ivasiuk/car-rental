@@ -2,6 +2,7 @@
 import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { IoCloseOutline } from 'react-icons/io5';
+import PropTypes from 'prop-types';
 // Styled components
 import { Overlay, ModalWindow, CloseBtn } from './Modal.styled';
 
@@ -43,4 +44,9 @@ export const Modal = ({ toggleModal, children }) => {
         </Overlay>,
         backdropRootPortal
     );
+};
+
+Modal.propTypes = {
+    toggleModal: PropTypes.func.isRequired,
+    children: PropTypes.node.isRequired,
 };
