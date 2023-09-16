@@ -17,6 +17,8 @@ import {
     RentalConditionsItem,
     AccentText,
 } from './AdvertModal.styled';
+// Helpers
+import { splitStringIntoNumberAndText } from 'helpers/splitStringIntoNumberAndText';
 // Static data
 import placeholder from 'img/placeholder.jpg';
 
@@ -39,6 +41,10 @@ export const AdvertModal = ({
         mileage,
     },
 }) => {
+    const normalizedData = rentalConditions
+        .split('\n')
+        .map(item => splitStringIntoNumberAndText(item));
+
     return (
         <>
             <Image
@@ -80,17 +86,30 @@ export const AdvertModal = ({
                     <BlockTitle>Rental Conditions:</BlockTitle>
 
                     <RentalConditionsList>
-                        {rentalConditions.split('\n').map(item => (
-                            <RentalConditionsItem key={item}>
-                                {item}
-                            </RentalConditionsItem>
-                        ))}
+                        {normalizedData.map(item => {
+                            if (typeof item === 'object') {
+                                return (
+                                    <RentalConditionsItem key={item}>
+                                        {item.text}{' '}
+                                        <AccentText>{item.number}</AccentText>
+                                    </RentalConditionsItem>
+                                );
+                            } else {
+                                return (
+                                    <RentalConditionsItem key={item}>
+                                        {item}
+                                    </RentalConditionsItem>
+                                );
+                            }
+                        })}
+
                         <RentalConditionsItem>
                             Mileage:{' '}
                             <AccentText>
                                 {mileage.toLocaleString('en-US')}
                             </AccentText>
                         </RentalConditionsItem>
+
                         <RentalConditionsItem>
                             Price: <AccentText>{rentalPrice}</AccentText>
                         </RentalConditionsItem>
