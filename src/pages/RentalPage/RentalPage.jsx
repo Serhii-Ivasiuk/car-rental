@@ -1,6 +1,7 @@
 // Libs
 import { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
+import { PulseLoader } from 'react-spinners';
 // Api
 import { getAdverts } from 'api/advertsApi';
 // Components
@@ -19,6 +20,8 @@ import {
     ERROR_MESSAGE,
     APOLOGIZE_MESSAGE,
 } from 'constants/constants';
+// Theme
+import { theme } from 'styles';
 
 export const RentalPage = () => {
     const [adverts, setAdverts] = useState([]);
@@ -65,11 +68,9 @@ export const RentalPage = () => {
 
     return (
         <Section>
-            {isLoading && <div>Loading...</div>}
-
             {error && <ErrorCard>{error}</ErrorCard>}
 
-            {!isLoading && !error && adverts.length > 0 && (
+            {!error && adverts.length > 0 && (
                 <>
                     <PageTitle hidden>Catalog</PageTitle>
 
@@ -80,7 +81,17 @@ export const RentalPage = () => {
 
                     {!isEndOfResults ? (
                         <ButtonSecondary type="button" onClick={handleLoadMore}>
-                            Load more
+                            {isLoading ? (
+                                <>
+                                    <span>Loading</span>
+                                    <PulseLoader
+                                        color={theme.colors.bgAccent}
+                                        size={3}
+                                    />
+                                </>
+                            ) : (
+                                <span>Load more</span>
+                            )}
                         </ButtonSecondary>
                     ) : (
                         <NoResults>
