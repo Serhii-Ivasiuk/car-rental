@@ -1,7 +1,7 @@
 // Libs
 import { useEffect, useState } from 'react';
 // Constants
-import { LS_KEY_FAVORITES } from 'constants/constants';
+import { ERROR_MESSAGE, LS_KEY_FAVORITES } from 'constants/constants';
 // Api
 import { updateAdvert } from 'api/advertsApi';
 
@@ -22,17 +22,23 @@ export const useFavorites = () => {
         const isAlreadyInFavorites = favorites.some(item => item.id === id);
 
         if (isAlreadyInFavorites) {
-            // Updating element in dataBase
-            const updates = { favorite: false };
-            await updateAdvert(id, updates);
-
-            setFavorites(prevState => prevState.filter(item => item.id !== id));
+            try {
+                const updates = { favorite: false };
+                await updateAdvert(id, updates);
+                setFavorites(prevState =>
+                    prevState.filter(item => item.id !== id)
+                );
+            } catch (error) {
+                throw new Error(ERROR_MESSAGE);
+            }
         } else {
-            // Updating element in dataBase
-            const updates = { favorite: true };
-            const updatedAdvert = await updateAdvert(id, updates);
-
-            setFavorites(prevState => [updatedAdvert, ...prevState]);
+            try {
+                const updates = { favorite: true };
+                const updatedAdvert = await updateAdvert(id, updates);
+                setFavorites(prevState => [updatedAdvert, ...prevState]);
+            } catch (error) {
+                throw new Error(ERROR_MESSAGE);
+            }
         }
     };
 
