@@ -9,11 +9,11 @@ import { App } from 'components/App/App';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
-        <BrowserRouter basename="/car-rental">
-            <ThemeProvider theme={theme}>
-                <Global styles={GlobalStyles} />
+        <ThemeProvider theme={theme}>
+            <Global styles={GlobalStyles} />
+            <BrowserRouter basename="/car-rental">
                 <App />
-            </ThemeProvider>
-        </BrowserRouter>
+            </BrowserRouter>
+        </ThemeProvider>
     </React.StrictMode>
 );
