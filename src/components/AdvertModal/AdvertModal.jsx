@@ -50,6 +50,8 @@ export const AdvertModal = ({
             <Image
                 src={img ? img : placeholder}
                 alt={`${make} ${model} ${year}`}
+                width="461px"
+                height="auto"
             />
 
             <div>

@@ -8,7 +8,7 @@ import noResults from 'img/noResults.webp';
 export const NoResults = ({ children }) => {
     return (
         <NoResultsStyled>
-            <img src={noResults} alt="No results" width="600" />
+            <img src={noResults} alt="No results" width="600" height="auto" />
             {children}
         </NoResultsStyled>
     );

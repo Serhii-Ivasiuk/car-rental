@@ -32,7 +32,12 @@ export const Hero = () => {
             </HeroTextWrapper>
 
             <HeroImageWrapper>
-                <img src={heroImage} alt="Click and drive" />
+                <img
+                    src={heroImage}
+                    alt="Click and drive"
+                    width="600px"
+                    height="auto"
+                />
             </HeroImageWrapper>
         </HeroStyled>
     );

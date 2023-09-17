@@ -67,6 +67,8 @@ export const Card = ({ data, toggleFavorites }) => {
                 <Image
                     src={img ? img : placeholder}
                     alt={`${make} ${model} ${year}`}
+                    width="274px"
+                    height="auto"
                 />
                 <FavoriteBtn type="button">
                     <FiHeart

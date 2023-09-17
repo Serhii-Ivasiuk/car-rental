@@ -197,3 +197,12 @@ export const ButtonsWrapper = styled.div`
     align-items: center;
     gap: 18px;
 `;
+
+export const ErrorValidationText = styled.p`
+    position: absolute;
+    top: 75px;
+    font-size: 14px;
+    line-height: normal;
+    letter-spacing: -0.28px;
+    color: deeppink;
+`;

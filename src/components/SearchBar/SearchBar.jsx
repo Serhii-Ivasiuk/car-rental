@@ -18,6 +18,7 @@ import {
     LabelText,
     NumberInput,
     ButtonsWrapper,
+    ErrorValidationText,
 } from './SearchBar.styled';
 // Helpers
 import { transformSelectData } from 'helpers';
@@ -27,7 +28,7 @@ import { initialValues } from './initialValues';
 // Static data
 import carBrands from 'data/carBrands.json';
 const priceList = Array.from({ length: 48 }, (_, index) => {
-    const value = (index + 3) * 10;
+    const value = (index + 6) * 5;
     return { value, label: value };
 });
 const brandsList = transformSelectData(carBrands);
@@ -41,8 +42,7 @@ export const SearchBar = ({ handleSearch }) => {
         setError,
         getValues,
         reset,
-        // !TODO - remove comment below when add validation
-        // formState: { errors },
+        formState: { errors },
     } = useForm(formSettings);
 
     const [searchState, setState] = useState({ ...initialValues });
@@ -64,7 +64,7 @@ export const SearchBar = ({ handleSearch }) => {
 
         setState(prevState => ({
             ...prevState,
-            [fieldName]: value,
+            [fieldName]: value ? parseFloat(value.replace(/,/g, '')) : value,
         }));
     };
 
@@ -128,11 +128,13 @@ export const SearchBar = ({ handleSearch }) => {
                     <InputLabel>
                         <LabelText>From</LabelText>
                         <NumberInput
-                            type="number"
+                            type="text"
                             name="mileageFrom"
                             autocomplete="off"
                             {...register('mileageFrom')}
-                            value={searchState.mileageFrom}
+                            value={Number(
+                                searchState.mileageFrom
+                            ).toLocaleString('en-US')}
                             onChange={handleInputChange}
                         />
                     </InputLabel>
@@ -140,14 +142,22 @@ export const SearchBar = ({ handleSearch }) => {
                     <InputLabel>
                         <LabelText>To</LabelText>
                         <NumberInput
-                            type="number"
+                            type="text"
                             name="mileageTo"
                             autocomplete="off"
                             {...register('mileageTo')}
-                            value={searchState.mileageTo}
+                            value={Number(searchState.mileageTo).toLocaleString(
+                                'en-US'
+                            )}
                             onChange={handleInputChange}
                         />
                     </InputLabel>
+
+                    {(errors.mileageFrom || errors.mileageFrom) && (
+                        <ErrorValidationText>
+                            Enter positive number
+                        </ErrorValidationText>
+                    )}
                 </InputWrapper>
             </Fieldset>
 

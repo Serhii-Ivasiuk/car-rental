@@ -15,12 +15,17 @@ export const filterAdverts = (adverts, filters) => {
         );
     }
 
-    if (mileageFrom) {
-        data = data.filter(({ mileage }) => mileage >= mileageFrom);
+    if (mileageTo) {
+        data = data.filter(
+            ({ mileage }) => mileage <= parseFloat(mileageTo.replace(/,/g, ''))
+        );
     }
 
-    if (mileageTo) {
-        data = data.filter(({ mileage }) => mileage <= mileageTo);
+    if (mileageFrom) {
+        data = data.filter(
+            ({ mileage }) =>
+                mileage >= parseFloat(mileageFrom.replace(/,/g, ''))
+        );
     }
 
     return data;

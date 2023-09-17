@@ -80,7 +80,7 @@ export const RentalPage = () => {
     };
 
     const handleSearch = filters => {
-        setFilters(filters);
+        setFilters(prevState => ({ ...prevState, ...filters }));
     };
 
     const filteredData = filterAdverts(adverts, filters);
