@@ -25,7 +25,7 @@ import { transformSelectData } from 'helpers';
 import { formSettings } from './formSettings';
 import { initialValues } from './initialValues';
 // Static data
-import carBrands from './carBrands.json';
+import carBrands from 'data/carBrands.json';
 const priceList = Array.from({ length: 48 }, (_, index) => {
     const value = (index + 3) * 10;
     return { value, label: value };
@@ -114,6 +114,9 @@ export const SearchBar = ({ handleSearch }) => {
                                 field.onChange(selectedOption);
                                 handleSelectChange(field.name);
                             }}
+                            formatOptionLabel={option => (
+                                <span>To {option.value}$</span>
+                            )}
                         />
                     </Label>
                 )}

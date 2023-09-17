@@ -14,7 +14,7 @@ export const StyledForm = styled.form`
     }
 
     & > label:last-of-type {
-        width: 125px;
+        width: 135px;
     }
 `;
 
@@ -90,7 +90,7 @@ export const selectStyles = {
     }),
     indicatorsContainer: baseStyles => ({
         ...baseStyles,
-        padding: '0 18px ',
+        padding: '0 18px 0 6px',
     }),
     valueContainer: baseStyles => ({
         ...baseStyles,

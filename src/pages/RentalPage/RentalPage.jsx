@@ -29,6 +29,8 @@ import {
 import { theme } from 'styles';
 // Other
 import { initialValues } from 'components/SearchBar/initialValues';
+// Constants
+import { END_OF_RESULTS_MESSAGE, NO_RESULTS_MESSAGE } from 'constants';
 
 export const RentalPage = () => {
     const [adverts, setAdverts] = useState([]);
@@ -52,7 +54,10 @@ export const RentalPage = () => {
                     abortController.signal
                 );
                 setAdverts(prevState => [...prevState, ...data]);
-                if (data.length < LIMIT) setIsEndOfResults(true);
+                if (data.length < LIMIT) {
+                    setIsEndOfResults(true);
+                    toast.info(END_OF_RESULTS_MESSAGE);
+                }
             } catch (err) {
                 if (err.name === CANCELED_ERROR) {
                     setError('');
@@ -92,12 +97,16 @@ export const RentalPage = () => {
                         <SearchBar handleSearch={handleSearch} />
                     </Section>
 
+                    {!filteredData.length && (
+                        <NoResults>{NO_RESULTS_MESSAGE}</NoResults>
+                    )}
+
                     <Section>
                         <CardList
                             data={filteredData}
                             toggleFavorites={toggleFavorites}
                         />
-                        {!isEndOfResults ? (
+                        {!isEndOfResults && (
                             <ButtonSecondary
                                 type="button"
                                 onClick={handleLoadMore}
@@ -114,11 +123,6 @@ export const RentalPage = () => {
                                     <span>Load more</span>
                                 )}
                             </ButtonSecondary>
-                        ) : (
-                            <NoResults>
-                                Sorry, but that's all the cars we have for you
-                                at the moment.
-                            </NoResults>
                         )}
                     </Section>
                 </>
