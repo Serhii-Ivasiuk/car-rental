@@ -1,6 +1,7 @@
 // Libs
 import { useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
+import PropTypes from 'prop-types';
 import Select from 'react-select';
 // Components
 import { ButtonPrimary, ButtonSecondary } from 'components';
@@ -162,4 +163,8 @@ export const SearchBar = ({ handleSearch }) => {
             </ButtonsWrapper>
         </StyledForm>
     );
+};
+
+SearchBar.propTypes = {
+    handleSearch: PropTypes.func.isRequired,
 };
