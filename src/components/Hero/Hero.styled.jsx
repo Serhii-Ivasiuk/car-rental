@@ -12,6 +12,7 @@ export const HeroTextWrapper = styled.div`
     justify-content: center;
     gap: 28px;
     flex-basis: calc(50% - 28px / 2);
+    text-align: left;
 `;
 
 export const HeroText = styled.p`
