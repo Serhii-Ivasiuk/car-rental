@@ -17,7 +17,7 @@ export const App = () => {
                 <Route path="rental" element={<RentalPage />} />
                 <Route path="favorite" element={<FavoritePage />} />
             </Route>
-            <Route path="*" element={<Navigate to="/" />} />
+            <Route path="*" element={<Navigate to="/" replace={true} />} />
         </Routes>
     );
 };
