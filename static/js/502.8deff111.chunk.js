@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkcar_rental=self.webpackChunkcar_rental||[]).push([[502,961],{6502:function(n,t,e){e.r(t),e.d(t,{Section:function(){return i}});var r=e(4961),c=e(184),i=function(n){var t=n.children;return(0,c.jsx)(r.SectionStyled,{children:t})}},4961:function(n,t,e){e.r(t),e.d(t,{SectionStyled:function(){return i}});var r,c=e(168),i=e(225).Z.section(r||(r=(0,c.Z)(["\n    text-align: center;\n\n    &:not(:last-child) {\n        margin-bottom: 50px;\n    }\n"])))}}]);
-//# sourceMappingURL=502.8deff111.chunk.js.map

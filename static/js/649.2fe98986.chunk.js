@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkcar_rental=self.webpackChunkcar_rental||[]).push([[649],{2649:function(e,a,c){e.exports=c.p+"static/media/placeholder.6923b630aa5c2c5f887b.webp"}}]);
