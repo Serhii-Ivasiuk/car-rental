@@ -29,7 +29,6 @@
 ![CSS](https://img.shields.io/badge/-CSS-05122A?style=flat&logo=CSS3&logoColor=1572B6)&nbsp;
 ![JavaScript](https://img.shields.io/badge/-JavaScript-05122A?style=flat&logo=javascript)&nbsp;
 ![React](https://img.shields.io/badge/-React-05122A?style=flat&logo=react)&nbsp;
-![Redux](https://img.shields.io/badge/-Redux-05122A?style=flat&logo=redux)&nbsp;
 
 </span>
 
@@ -48,11 +47,11 @@ Our rental process is simple and hassle-free, so you can get on the road and sta
 
 🔍 Search by brand, hour price or car mileage.
 
-💰 And with our flexible rental options and competitive pricing, you'll be able to find the perfect car for your needs and budget.
+💰 With our flexible rental options and competitive pricing, you'll be able to find the perfect car for your needs and budget.
 
-🛠️ Our vehicles are meticulously maintained and regularly serviced, so you can feel confident hitting the road in one of our rentals..
+🛠️ Our vehicles are meticulously maintained and regularly serviced, so you can feel confident hitting the road in one of our rentals.
 
-💰 And with our flexible rental optons and competitive pricing, you'll be able to find the perfect car for your needs and budget.
+👌 At Click and Drive, we know that the journey is just as important as the destination. That's why we offer top-of-the-line amenities and features in all of our rentals.
   
 📊 Unsurpassed customer service. We're here to make sure your rental experience is smooth and enjoyable from start to finish.
 
