@@ -1,6 +1,5 @@
 // Components
-import { Section } from 'components/Shared/Section/Section';
-import { Hero } from 'components/Hero/Hero';
+import { Section, Hero } from 'components';
 
 export const HomePage = () => {
     return (

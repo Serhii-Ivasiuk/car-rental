@@ -1,9 +1,9 @@
 // Libs
 import { useEffect, useState } from 'react';
 // Constants
-import { ERROR_MESSAGE, LS_KEY_FAVORITES } from 'constants/constants';
+import { ERROR_MESSAGE, LS_KEY_FAVORITES } from 'constants';
 // Api
-import { updateAdvert } from 'api/advertsApi';
+import { updateAdvert } from 'api';
 
 export const useFavorites = () => {
     const [favorites, setFavorites] = useState(() => {

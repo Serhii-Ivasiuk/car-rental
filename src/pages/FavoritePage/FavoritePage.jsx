@@ -1,11 +1,13 @@
 // Components
-import { Section } from 'components/Shared/Section/Section';
-import { PageTitle } from 'components/Shared/PageTitle/PageTitle';
-import { CardList } from 'components/Shared/CardList/CardList';
-import { NoResults } from 'components/Shared/NoResults/NoResults';
-import { RedirectionLink } from 'components/Shared/RedirectionLink/RedirectionLink';
+import {
+    Section,
+    PageTitle,
+    CardList,
+    NoResults,
+    RedirectionLink,
+} from 'components';
 // Hooks
-import { useFavorites } from 'hooks/useFavorites';
+import { useFavorites } from 'hooks';
 
 export const FavoritePage = () => {
     const [favorites, toggleFavorites] = useFavorites();

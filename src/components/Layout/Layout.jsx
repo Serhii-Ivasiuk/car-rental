@@ -4,7 +4,7 @@ import { Outlet } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import { BeatLoader } from 'react-spinners';
 // Components
-import { NavBar } from 'components/NavBar/NavBar';
+import { NavBar } from 'components';
 // Styled components
 import {
     Page,

@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import Select from 'react-select';
 // Components
-import { ButtonPrimary } from 'components/Shared/ButtonPrimary/ButtonPrimary';
+import { ButtonPrimary, ButtonSecondary } from 'components';
 // Styled components
 import {
     StyledForm,
@@ -19,13 +19,12 @@ import {
     ButtonsWrapper,
 } from './SearchBar.styled';
 // Helpers
-import { transformSelectData } from 'helpers/transformSelectData';
+import { transformSelectData } from 'helpers';
 // Other
 import { formSettings } from './formSettings';
 import { initialValues } from './initialValues';
 // Static data
 import carBrands from './carBrands.json';
-import { ButtonSecondary } from 'components/Shared/ButtonSecondary/ButtonSecondary';
 const priceList = Array.from({ length: 48 }, (_, index) => {
     const value = (index + 3) * 10;
     return { value, label: value };

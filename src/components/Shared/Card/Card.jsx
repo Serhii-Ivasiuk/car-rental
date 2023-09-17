@@ -4,9 +4,7 @@ import { FiHeart } from 'react-icons/fi';
 import { toast } from 'react-toastify';
 import PropTypes from 'prop-types';
 // Components
-import { Modal } from 'components/Shared/Modal/Modal';
-import { AdvertModal } from 'components/AdvertModal/AdvertModal';
-import { ButtonPrimary } from 'components/Shared/ButtonPrimary/ButtonPrimary';
+import { Modal, AdvertModal, ButtonPrimary } from 'components';
 // Styled components
 import {
     CardItem,
@@ -23,7 +21,7 @@ import {
     BtnWrapper,
 } from './Card.styled';
 // Helpers
-import { getShortestStringFromArr } from 'helpers/getShortestStringFromArr';
+import { getShortestStringFromArr } from 'helpers';
 // Static data
 import placeholder from 'img/placeholder.webp';
 // Theme

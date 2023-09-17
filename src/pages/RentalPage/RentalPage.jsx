@@ -3,28 +3,31 @@ import { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import { PulseLoader } from 'react-spinners';
 // Api
-import { getAdverts } from 'api/advertsApi';
+import { getAdverts } from 'api';
 // Components
-import { Section } from 'components/Shared/Section/Section';
-import { SearchBar } from 'components/SearchBar/SearchBar';
-import { PageTitle } from 'components/Shared/PageTitle/PageTitle';
-import { CardList } from 'components/Shared/CardList/CardList';
-import { ButtonSecondary } from 'components/Shared/ButtonSecondary/ButtonSecondary';
-import { NoResults } from 'components/Shared/NoResults/NoResults';
-import { ErrorCard } from 'components/Shared/ErrorCard/ErrorCard';
+import {
+    Section,
+    SearchBar,
+    PageTitle,
+    CardList,
+    ButtonSecondary,
+    NoResults,
+    ErrorCard,
+} from 'components';
 // Hooks
-import { useFavorites } from 'hooks/useFavorites';
+import { useFavorites } from 'hooks';
 // Helpers
-import { filterAdverts } from 'helpers/filterAdverts';
+import { filterAdverts } from 'helpers';
 // Constants
 import {
     LIMIT,
     CANCELED_ERROR,
     ERROR_MESSAGE,
     APOLOGIZE_MESSAGE,
-} from 'constants/constants';
+} from 'constants';
 // Theme
 import { theme } from 'styles';
+// Other
 import { initialValues } from 'components/SearchBar/initialValues';
 
 export const RentalPage = () => {

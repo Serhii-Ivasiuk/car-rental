@@ -5,7 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { Global, ThemeProvider } from '@emotion/react';
 import { GlobalStyles, theme } from 'styles';
 // Components
-import { App } from 'components/App/App';
+import { App } from 'components';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>

@@ -1,6 +1,5 @@
 // Components
-import { PageTitle } from 'components/Shared/PageTitle/PageTitle';
-import { RedirectionLink } from 'components/Shared/RedirectionLink/RedirectionLink';
+import { PageTitle, RedirectionLink } from 'components';
 // Styled components
 import {
     HeroStyled,

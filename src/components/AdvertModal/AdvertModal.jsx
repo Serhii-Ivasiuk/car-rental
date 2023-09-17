@@ -1,7 +1,7 @@
 // Libs
 import PropTypes from 'prop-types';
 // Components
-import { ButtonPrimary } from 'components/Shared/ButtonPrimary/ButtonPrimary';
+import { ButtonPrimary } from 'components';
 // Styled components
 import {
     TitleBlockWrapper,

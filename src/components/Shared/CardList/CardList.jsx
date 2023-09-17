@@ -1,8 +1,9 @@
 // Libs
 import PropTypes from 'prop-types';
 // Components
+import { Card } from 'components';
+// Styled components
 import { CardListStyled } from './CardList.styled';
-import { Card } from 'components/Shared/Card/Card';
 
 export const CardList = ({ data, toggleFavorites }) => {
     return (
