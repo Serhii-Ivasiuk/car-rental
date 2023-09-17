@@ -18,6 +18,10 @@ export const Container = styled.div`
     margin: 0 auto;
 `;
 
+export const SectionWrapper = styled.div`
+    padding: 150px 128px;
+`;
+
 export const Footer = styled.footer`
     margin-top: auto;
     padding: 12px 0;

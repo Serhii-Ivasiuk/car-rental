@@ -2,11 +2,17 @@
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
-import { BeatLoader, ClipLoader } from 'react-spinners';
+import { BeatLoader } from 'react-spinners';
 // Components
 import { NavBar } from 'components/NavBar/NavBar';
 // Styled components
-import { Page, Header, Container, Footer } from './Layout.styled';
+import {
+    Page,
+    Header,
+    Container,
+    SectionWrapper,
+    Footer,
+} from './Layout.styled';
 import { Overlay } from 'components/Shared/Modal/Modal.styled';
 // Theme
 import { theme } from 'styles';
@@ -22,18 +28,20 @@ export const Layout = () => {
                 </Header>
                 <main>
                     <Container>
-                        <Suspense
-                            fallback={
-                                <Overlay>
-                                    <BeatLoader
-                                        color={theme.colors.bgAccent}
-                                        size={20}
-                                    />
-                                </Overlay>
-                            }
-                        >
-                            <Outlet />
-                        </Suspense>
+                        <SectionWrapper>
+                            <Suspense
+                                fallback={
+                                    <Overlay>
+                                        <BeatLoader
+                                            color={theme.colors.bgAccent}
+                                            size={20}
+                                        />
+                                    </Overlay>
+                                }
+                            >
+                                <Outlet />
+                            </Suspense>
+                        </SectionWrapper>
                     </Container>
                 </main>
                 <Footer>
